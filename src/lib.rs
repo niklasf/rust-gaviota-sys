@@ -17,7 +17,7 @@ mod tests {
             tbcache_restart(1024 * 1024, 50);
 
             let paths = tbpaths_init();
-            let paths = tbpaths_add(paths, CString::new("/home/niklas/Projekte/syzygy-tables.info/gaviota").unwrap().as_ptr());
+            let paths = tbpaths_add(paths, CString::new("tables").unwrap().as_ptr());
 
             let initinfo = tb_init(1, TB_compression_scheme::tb_CP4 as i32, paths);
             if initinfo.is_null() {
