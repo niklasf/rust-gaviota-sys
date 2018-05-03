@@ -1,0 +1,3 @@
+[submodule "Gaviota-Tablebases"]
+	path = Gaviota-Tablebases
+	url = https://github.com/michiguel/Gaviota-Tablebases
