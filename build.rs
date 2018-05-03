@@ -34,7 +34,6 @@ fn generate_bindings() {
         .whitelist_function("tbstats_reset")
         .whitelist_type("TB_castling")
         .whitelist_type("TB_compression_scheme")
-        .whitelist_type("TB_mask_values")
         .whitelist_type("TB_pieces")
         .whitelist_type("TB_return_values")
         .whitelist_type("TB_sides")
