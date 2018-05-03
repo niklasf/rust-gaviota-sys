@@ -30,7 +30,7 @@ include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 #[cfg(test)]
 mod tests {
     use std::ffi::{CStr, CString};
-    use std::os::raw::{c_uchar, c_uint};
+    use std::os::raw::{c_int, c_uchar, c_uint};
     use super::*;
 
     #[test]
@@ -42,7 +42,7 @@ mod tests {
             let paths = tbpaths_init();
             let paths = tbpaths_add(paths, CString::new("tables").unwrap().as_ptr());
 
-            let initinfo = tb_init(1, TB_compression_scheme::tb_CP4 as i32, paths);
+            let initinfo = tb_init(1, TB_compression_scheme::tb_CP4 as c_int, paths);
             if initinfo.is_null() {
                 panic!("tb_init failed");
             }
