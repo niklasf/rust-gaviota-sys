@@ -1,7 +1,7 @@
 [package]
 name = "gaviota-sys"
 version = "0.1.0" # remember to update html_root_url
-description = "Bindings for libgtb, a library for Gaviota tablebase probing"
+description = "Low level bindings for libgtb, a library for Gaviota tablebase probing"
 repository = "https://github.com/niklasf/rust-gaviota-sys"
 readme = "README.md"
 license = "MIT AND Zlib"
