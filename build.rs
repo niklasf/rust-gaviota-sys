@@ -1,9 +1,10 @@
 extern crate bindgen;
+extern crate cc;
 
 use std::env;
 use std::path::PathBuf;
 
-fn main() {
+fn generate_bindings() {
     let bindings = bindgen::builder()
         .header("wrapper.h")
         .clang_arg("-IGaviota-Tablebases")
@@ -42,6 +43,18 @@ fn main() {
         .unwrap();
 
     let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
-
     bindings.write_to_file(out_path.join("bindings.rs")).unwrap();
+}
+
+fn compile() {
+    cc::Build::new()
+        .file("Gaviota-Tablebases/gtb-probe.c")
+        .include("Gaviota-Tablebases")
+        .include("Gaviota-Tablebases/sysport")
+        .compile("libgtb.a");
+}
+
+fn main() {
+    generate_bindings();
+    compile();
 }
