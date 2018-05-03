@@ -39,6 +39,13 @@ fn generate_bindings() {
         .whitelist_type("TB_return_values")
         .whitelist_type("TB_sides")
         .whitelist_type("TB_squares")
+        .bitfield_enum("TB_return_values")
+        .bitfield_enum("TB_castling")
+        .rustified_enum("TB_sides")
+        .rustified_enum("TB_squares")
+        .rustified_enum("TB_pieces")
+        .rustified_enum("TB_compression_scheme")
+        .prepend_enum_name(false)
         .generate()
         .unwrap();
 

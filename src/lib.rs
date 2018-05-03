@@ -19,7 +19,7 @@ mod tests {
             let paths = tbpaths_init();
             let paths = tbpaths_add(paths, CString::new("/home/niklas/Projekte/syzygy-tables.info/gaviota").unwrap().as_ptr());
 
-            let initinfo = tb_init(1, TB_compression_scheme_tb_CP4 as i32, paths);
+            let initinfo = tb_init(1, TB_compression_scheme::tb_CP4 as i32, paths);
             if initinfo.is_null() {
                 panic!("tb_init failed");
             }
@@ -27,17 +27,17 @@ mod tests {
             println!("initinfo: {:?}", CStr::from_ptr(initinfo));
             println!("availability: {}", tb_availability());
 
-            let ws = [TB_squares_tb_A1 as c_uint, TB_squares_tb_B1 as c_uint, TB_squares_tb_NOSQUARE as c_uint];
-            let wp = [TB_pieces_tb_KING as c_uchar, TB_pieces_tb_ROOK as c_uchar, TB_pieces_tb_NOPIECE as c_uchar];
-            let bs = [TB_squares_tb_E5 as c_uint, TB_squares_tb_NOSQUARE as c_uint];
-            let bp = [TB_pieces_tb_KING as c_uchar, TB_pieces_tb_NOPIECE as c_uchar];
+            let ws = [TB_squares::tb_A1 as c_uint, TB_squares::tb_B1 as c_uint, TB_squares::tb_NOSQUARE as c_uint];
+            let wp = [TB_pieces::tb_KING as c_uchar, TB_pieces::tb_ROOK as c_uchar, TB_pieces::tb_NOPIECE as c_uchar];
+            let bs = [TB_squares::tb_E5 as c_uint, TB_squares::tb_NOSQUARE as c_uint];
+            let bp = [TB_pieces::tb_KING as c_uchar, TB_pieces::tb_NOPIECE as c_uchar];
             let mut info: c_uint = 0;
             let mut pliestomate: c_uint = 0;
 
             let result = tb_probe_hard(
-                TB_sides_tb_WHITE_TO_MOVE, // stm
-                TB_squares_tb_NOSQUARE, // epsq
-                TB_castling_tb_NOCASTLE, // castles
+                TB_sides::tb_WHITE_TO_MOVE as c_uint, // stm
+                TB_squares::tb_NOSQUARE as c_uint, // epsq
+                TB_castling::tb_NOCASTLE.0, // castles
                 ws.as_ptr(),
                 bs.as_ptr(),
                 wp.as_ptr(),
@@ -47,7 +47,7 @@ mod tests {
 
             println!("result: {:?} info: {:?} dtm: {:?}", result, info, pliestomate);
             assert!(result != 0);
-            assert_eq!(info, TB_return_values_tb_WMATE);
+            assert_eq!(info, TB_return_values::tb_WMATE.0);
             assert_eq!(pliestomate, 29);
 
             tbpaths_done(paths);
