@@ -1,0 +1,17 @@
+language: rust
+sudo: false
+
+rust:
+ - stable
+ - beta
+ - nightly
+
+cache:
+  directories:
+   - tables
+
+before_install:
+ - ./download-test-tables.sh
+
+before_cache:
+ - rm -f tables/**/*.txt
