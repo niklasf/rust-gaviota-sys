@@ -49,8 +49,16 @@ fn generate_bindings() {
 fn compile() {
     cc::Build::new()
         .file("Gaviota-Tablebases/gtb-probe.c")
+        .file("Gaviota-Tablebases/gtb-dec.c")
+        .file("Gaviota-Tablebases/gtb-att.c")
+        .file("Gaviota-Tablebases/sysport/sysport.c")
         .include("Gaviota-Tablebases")
         .include("Gaviota-Tablebases/sysport")
+        .include("Gaviota-Tablebases/compression")
+        .include("Gaviota-Tablebases/compression/liblzf")
+        .include("Gaviota-Tablebases/compression/zlib")
+        .include("Gaviota-Tablebases/compression/lzma")
+        .include("Gaviota-Tablebases/compression/huffman")
         .compile("libgtb.a");
 }
 
