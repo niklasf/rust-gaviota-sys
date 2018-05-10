@@ -5,6 +5,7 @@ Low level Rust bindings for [libgtb](https://github.com/michiguel/Gaviota-Tableb
 
 [![Build Status](https://travis-ci.org/niklasf/rust-gaviota-sys.svg?branch=master)](https://travis-ci.org/niklasf/rust-gaviota-sys)
 [![crates.io](https://img.shields.io/crates/v/gaviota-sys.svg)](https://crates.io/crates/gaviota-sys)
+[![docs.rs](https://docs.rs/gaviota-sys/badge.svg)](https://docs.rs/gaviota-sys)
 
 Documentation
 -------------
