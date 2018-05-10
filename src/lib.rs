@@ -40,7 +40,7 @@ mod tests {
             tbcache_restart(1024 * 1024, 50);
 
             let paths = tbpaths_init();
-            let paths = tbpaths_add(paths, CString::new("tables").unwrap().as_ptr());
+            let paths = tbpaths_add(paths, CString::new("Gaviota-Tablebases/gtb/gtb4").unwrap().as_ptr());
 
             let initinfo = tb_init(1, TB_compression_scheme::tb_CP4 as c_int, paths);
             if initinfo.is_null() {
