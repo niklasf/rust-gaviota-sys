@@ -15,5 +15,5 @@ Documentation
 License
 -------
 
-View `Gaviota-Tablebase/license.txt` for the licenses of the various
+View `Gaviota-Tablebases/license.txt` for the licenses of the various
 components (essentially MIT + Zlib).
