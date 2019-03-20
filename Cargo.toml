@@ -11,7 +11,7 @@ keywords = ["chess", "gaviota", "tablebase"]
 exclude = ["tables/**/*.cp4"]
 
 [build-dependencies]
-bindgen = "0.47"
+bindgen = "0.48"
 cc = "1.0"
 
 [badges]
