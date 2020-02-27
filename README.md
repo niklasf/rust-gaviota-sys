@@ -7,6 +7,13 @@ Low level Rust bindings for [libgtb](https://github.com/michiguel/Gaviota-Tableb
 [![crates.io](https://img.shields.io/crates/v/gaviota-sys.svg)](https://crates.io/crates/gaviota-sys)
 [![docs.rs](https://docs.rs/gaviota-sys/badge.svg)](https://docs.rs/gaviota-sys)
 
+Disclaimer
+----------
+
+These low level bindings are sound if and only if the underlying C library is
+sound. I have no confidence in its ability to correctly handle malicious input.
+In any case, checksums of tablebase files should be verified before use.
+
 Documentation
 -------------
 
