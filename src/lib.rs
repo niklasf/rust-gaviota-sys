@@ -19,7 +19,7 @@
 // IN THE SOFTWARE.
 
 
-#![doc(html_root_url = "https://docs.rs/gaviota-sys/0.1.12")]
+#![doc(html_root_url = "https://docs.rs/gaviota-sys/0.1.13")]
 
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
