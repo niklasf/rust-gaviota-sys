@@ -11,7 +11,7 @@ keywords = ["chess", "gaviota", "tablebase"]
 exclude = ["tables/**/*.cp4"]
 
 [build-dependencies]
-bindgen = { version = "0.55", default-features = false, features = ["logging", "runtime"] }
+bindgen = { version = "0.56", default-features = false, features = ["logging", "runtime"] }
 cc = "1.0"
 
 [badges]
