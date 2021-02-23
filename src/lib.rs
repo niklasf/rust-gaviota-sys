@@ -18,8 +18,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-
-#![doc(html_root_url = "https://docs.rs/gaviota-sys/0.1.15")]
+#![doc(html_root_url = "https://docs.rs/gaviota-sys/0.1.16")]
 
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
