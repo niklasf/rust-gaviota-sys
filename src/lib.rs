@@ -41,7 +41,7 @@ mod tests {
             let paths = tbpaths_init();
             let path = CString::new("Gaviota-Tablebases/gtb/gtb4").unwrap();
             let paths = tbpaths_add(paths, path.as_ptr());
-            drop(path);
+            drop(path); // can drop after adding
 
             let initinfo = tb_init(1, TB_compression_scheme::tb_CP4 as c_int, paths);
             if initinfo.is_null() {
