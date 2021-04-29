@@ -1,13 +1,6 @@
 version: 2
 updates:
-- package-ecosystem: cargo
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: bindgen
-    versions:
-    - 0.57.0
-    - 0.58.0
+  - package-ecosystem: cargo
+    directory: '/'
+    schedule:
+      interval: daily
