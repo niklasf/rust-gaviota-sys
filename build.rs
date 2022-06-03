@@ -6,6 +6,7 @@ use std::path::PathBuf;
 
 fn generate_bindings() {
     let bindings = bindgen::builder()
+        .layout_tests(false)
         .header("wrapper.h")
         .clang_arg("-IGaviota-Tablebases")
         .clang_arg("-IGaviota-Tablebases/sysport")
