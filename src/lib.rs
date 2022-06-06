@@ -1,4 +1,4 @@
-// Copyright 2018 Niklas Fiekas <niklas.fiekas@backscattering.de>
+// Copyright 2018-2022 Niklas Fiekas <niklas.fiekas@backscattering.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -18,7 +18,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-#![doc(html_root_url = "https://docs.rs/gaviota-sys/0.1.18")]
+#![doc(html_root_url = "https://docs.rs/gaviota-sys/0.1.19")]
 
 #![forbid(unsafe_op_in_unsafe_fn)]
 #![allow(non_upper_case_globals)]
