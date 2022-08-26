@@ -1,11 +1,12 @@
 extern crate bindgen;
 extern crate cc;
 
-use std::env;
-use std::path::PathBuf;
+use std::{env, path::PathBuf};
 
-fn generate_bindings() {
-    let bindings = bindgen::builder()
+fn main() {
+    let out_dir = PathBuf::from(env::var_os("OUT_DIR").unwrap());
+
+    bindgen::builder()
         .layout_tests(false)
         .header("wrapper.h")
         .clang_arg("-IGaviota-Tablebases")
@@ -47,13 +48,10 @@ fn generate_bindings() {
         .rustified_enum("TB_compression_scheme")
         .prepend_enum_name(false)
         .generate()
+        .unwrap()
+        .write_to_file(out_dir.join("bindings.rs"))
         .unwrap();
 
-    let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
-    bindings.write_to_file(out_path.join("bindings.rs")).unwrap();
-}
-
-fn compile() {
     cc::Build::new()
         .include("Gaviota-Tablebases")
         .include("Gaviota-Tablebases/sysport")
@@ -90,9 +88,13 @@ fn compile() {
         .file("Gaviota-Tablebases/compression/liblzf/lzf_c.c")
         .file("Gaviota-Tablebases/compression/liblzf/lzf_d.c")
         .compile("libgtb.a");
-}
 
-fn main() {
-    generate_bindings();
-    compile();
+    println!("cargo:root={}", out_dir.display());
+    println!(
+        "cargo:include={}",
+        env::current_dir()
+            .unwrap()
+            .join("Gaviota-Tablebases")
+            .display()
+    );
 }
