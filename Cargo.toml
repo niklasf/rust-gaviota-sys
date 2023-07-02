@@ -6,7 +6,6 @@ description = "Low level bindings for libgtb, a library for Gaviota tablebase pr
 repository = "https://github.com/niklasf/rust-gaviota-sys"
 readme = "README.md"
 license = "MIT AND Zlib"
-authors = ["Niklas Fiekas <niklas.fiekas@backscattering.de>"]
 categories = ["external-ffi-bindings", "games"]
 keywords = ["chess", "gaviota", "tablebase"]
 exclude = ["tables/**/*.cp4"]
