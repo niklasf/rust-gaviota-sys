@@ -50,6 +50,7 @@ fn main() {
         .unwrap();
 
     cc::Build::new()
+        .static_flag(true)
         .flag_if_supported("-Wno-expansion-to-defined")
         .flag_if_supported("-Wno-misleading-indentation")
         .include("Gaviota-Tablebases")
