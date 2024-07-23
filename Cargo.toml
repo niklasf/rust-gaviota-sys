@@ -1,6 +1,6 @@
 [package]
 name = "gaviota-sys"
-version = "0.1.26" # remember to update html_root_url
+version = "0.1.27" # remember to update html_root_url
 links = "gtb"
 description = "Low level bindings for libgtb, a library for Gaviota tablebase probing"
 repository = "https://github.com/niklasf/rust-gaviota-sys"
@@ -9,9 +9,10 @@ license = "MIT AND Zlib"
 categories = ["external-ffi-bindings", "games"]
 keywords = ["chess", "gaviota", "tablebase"]
 exclude = ["tables/**/*.cp4"]
+edition = "2021"
 
 [build-dependencies]
-bindgen = { version = "0.69.2", default-features = false, features = ["runtime"] }
+bindgen = { version = "0.69.4", default-features = false, features = ["runtime"] }
 cc = "1.0.79"
 
 [dependencies]

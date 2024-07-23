@@ -1,6 +1,3 @@
-extern crate bindgen;
-extern crate cc;
-
 use std::{env, path::PathBuf};
 
 fn main() {
@@ -78,7 +75,7 @@ fn main() {
         .file("Gaviota-Tablebases/compression/lzma/Bra86.c")
         .file("Gaviota-Tablebases/compression/liblzf/lzf_c.c")
         .file("Gaviota-Tablebases/compression/liblzf/lzf_d.c")
-        .compile("libgtb.a");
+        .compile("gtb");
 
     println!("cargo:root={}", out_dir.display());
     println!(
