@@ -13,3 +13,6 @@ exclude = ["tables/**/*.cp4"]
 [build-dependencies]
 bindgen = { version = "0.69.2", default-features = false, features = ["runtime"] }
 cc = "1.0.79"
+
+[dependencies]
+libz-sys = { version = "1.1.18", features = ["static"] }

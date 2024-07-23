@@ -59,10 +59,10 @@ fn main() {
         .include("Gaviota-Tablebases/sysport")
         .include("Gaviota-Tablebases/compression")
         .include("Gaviota-Tablebases/compression/liblzf")
-        .include("Gaviota-Tablebases/compression/zlib")
+        .include(env::var_os("DEP_Z_INCLUDE").expect("provided by libz-sys"))
         .include("Gaviota-Tablebases/compression/lzma")
         .include("Gaviota-Tablebases/compression/huffman")
-        .define("Z_PREFIX", None)
+        .define("z_uLong", "uLong") // Not using Z_PREFIX
         .file("Gaviota-Tablebases/gtb-probe.c")
         .file("Gaviota-Tablebases/gtb-dec.c")
         .file("Gaviota-Tablebases/gtb-att.c")
@@ -76,17 +76,6 @@ fn main() {
         .file("Gaviota-Tablebases/compression/lzma/Lzma86Enc.c")
         .file("Gaviota-Tablebases/compression/lzma/Lzma86Dec.c")
         .file("Gaviota-Tablebases/compression/lzma/Bra86.c")
-        .file("Gaviota-Tablebases/compression/zlib/zcompress.c")
-        .file("Gaviota-Tablebases/compression/zlib/uncompr.c")
-        .file("Gaviota-Tablebases/compression/zlib/inflate.c")
-        .file("Gaviota-Tablebases/compression/zlib/deflate.c")
-        .file("Gaviota-Tablebases/compression/zlib/adler32.c")
-        .file("Gaviota-Tablebases/compression/zlib/crc32.c")
-        .file("Gaviota-Tablebases/compression/zlib/infback.c")
-        .file("Gaviota-Tablebases/compression/zlib/inffast.c")
-        .file("Gaviota-Tablebases/compression/zlib/inftrees.c")
-        .file("Gaviota-Tablebases/compression/zlib/trees.c")
-        .file("Gaviota-Tablebases/compression/zlib/zutil.c")
         .file("Gaviota-Tablebases/compression/liblzf/lzf_c.c")
         .file("Gaviota-Tablebases/compression/liblzf/lzf_d.c")
         .compile("libgtb.a");
@@ -99,4 +88,6 @@ fn main() {
             .join("Gaviota-Tablebases")
             .display()
     );
+
+    println!("cargo::rustc-link-lib=static=z");
 }
