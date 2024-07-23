@@ -53,6 +53,8 @@ fn main() {
         .unwrap();
 
     cc::Build::new()
+        .flag_if_supported("-Wno-expansion-to-defined")
+        .flag_if_supported("-Wno-misleading-indentation")
         .include("Gaviota-Tablebases")
         .include("Gaviota-Tablebases/sysport")
         .include("Gaviota-Tablebases/compression")
