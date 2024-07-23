@@ -12,7 +12,7 @@ exclude = ["tables/**/*.cp4"]
 edition = "2021"
 
 [build-dependencies]
-bindgen = { version = "0.69.4", default-features = false, features = ["runtime"] }
+bindgen = { version = "0.69.4", default-features = false, features = ["logging"] }
 cc = "1.0.79"
 
 [dependencies]
