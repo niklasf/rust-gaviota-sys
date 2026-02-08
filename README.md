@@ -11,13 +11,13 @@ Disclaimer
 ----------
 
 These low level bindings are sound if and only if the underlying C library is
-sound. I have no confidence in its ability to correctly handle malicious input.
-In any case, checksums of tablebase files should be verified before use.
+sound. Checksums of tablebase files should be verified before use.
 
 Documentation
 -------------
 
-[Read the documentation](https://docs.rs/gaviota-sys)
+* [Generated API reference](https://docs.rs/gaviota-sys)
+* [`gtb-probe.h`](https://github.com/michiguel/Gaviota-Tablebases/blob/master/gtb-probe.h)
 
 License
 -------
